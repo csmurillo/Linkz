@@ -1,24 +1,27 @@
 import * as React from 'react';
-import { View, Text, Button, Image, TextInput } from 'react-native';
+import { View, Button, Image, TextInput } from 'react-native';
 import LinkzLogo from '../../images/linkzLogo.png';
+import LinkzHeader from './LinkzHeader';
 
-const Send = () => {
+const Send = ({navigation}) => {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <View>
-                <Image source={LinkzLogo}/>
-            </View>
-            <View style={{flexDirection:'row'}}>
-                <TextInput
-                    style={{borderWidth:1, width:200}}
-                    placeholder="Url"
-                    keyboardType="numeric"
-                />
-                <Button title="Send">
-                    {/* <Text>Send</Text> */}
-                </Button>
-            </View>
-        </View> 
+        <>
+            <LinkzHeader navigation={navigation}></LinkzHeader>
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <View>
+                    <Image source={LinkzLogo}/>
+                </View>
+                <View style={{flexDirection:'row'}}>
+                    <TextInput
+                        style={{borderWidth:1, width:200}}
+                        placeholder="Url"
+                        keyboardType="numeric"
+                    />
+                    <Button title="Send">
+                    </Button>
+                </View>
+            </View> 
+        </>
     );
 };
 

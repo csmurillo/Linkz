@@ -1,11 +1,16 @@
 import * as React from 'react';
-import { View, Text, Button, Image } from 'react-native';
+import { View, Text } from 'react-native';
 
-const History = () => {
+import LinkzHeader from './LinkzHeader';
+
+const History = ({navigation}) => {
     return (
-        <View style={{flexGrow:1, justifyContent: 'center', alignItems: 'center'}}>
-            <Text>No History Found</Text>
-        </View> 
+        <>
+            <LinkzHeader navigation={navigation}></LinkzHeader>
+            <View style={{flexGrow:1, justifyContent: 'center', alignItems: 'center'}}>
+                <Text>No History Found</Text>
+            </View> 
+        </>
     );
 };
 

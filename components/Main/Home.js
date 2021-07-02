@@ -4,8 +4,9 @@ import EvilIcon from 'react-native-vector-icons/EvilIcons';
 import FeaterIcon from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const Home = () => {
-
+import LinkzHeader from './LinkzHeader';
+const Home = ({navigation}) => {
+    console.log(navigation);
     const ProfilePic = ()=>(
         <View style={{flexDirection:"row"}}>
             <FeaterIcon name="home" size={20} style={{marginLeft:15}}/>
@@ -19,7 +20,7 @@ const Home = () => {
                     <EvilIcon name="user" size={150} />
                 </View>
                 <View style={[styles.center,{flexGrow:1}]}>
-                    <Button title="Edit" style={{fontSize:25}}/>
+                    <Button title="Edit" style={{fontSize:25}} onPress={() => console.log('linkz')}/>
                 </View>
             </View>
             <View style={[styles.center,{flexGrow:1}]}>
@@ -53,16 +54,19 @@ const Home = () => {
     );
 
     return (
-        <View style={{flexGrow:1, flexDirection:'column'}}>
-           <View style={{flex:2}}>
-               {<ProfilePic></ProfilePic>}
-               {<ProfileName></ProfileName>}
-           </View>
-           <View style={{flex:2, flexDirection:'row'}}>
-               {<SmallBag></SmallBag>}
-               {<Security></Security>}
-           </View>
-        </View> 
+        <>
+            <LinkzHeader navigation={navigation}></LinkzHeader>
+            <View style={{flexGrow:1, flexDirection:'column'}}>
+                <View style={{flex:2}}>
+                    {<ProfilePic></ProfilePic>}
+                    {<ProfileName></ProfileName>}
+                </View>
+                <View style={{flex:2, flexDirection:'row'}}>
+                    {<SmallBag></SmallBag>}
+                    {<Security></Security>}
+                </View>
+            </View> 
+        </>
     );
 };
 const styles = StyleSheet.create({

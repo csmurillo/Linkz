@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View, Text, Button, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import LinkzLogo from '../images/linkzLogo.png';
 
-const Entry = () => {
+const Entry = ( { navigation } ) => {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <View>
@@ -12,17 +12,20 @@ const Entry = () => {
                 <View>
                     <View style={styles.spaceBottom}>
                     <TouchableOpacity style={{height:50, backgroundColor:'#24a0ed'}}>
-                        <Text style={{fontSize:30,textAlign:'center', color: 'white'}}>Login</Text>
+                        <Text style={{fontSize:30,textAlign:'center', color: 'white'}} onPress={() => navigation.navigate('Login')}>Login</Text>
                     </TouchableOpacity>
                         {/* <Button title="Login"></Button> */}
                     </View>
                     <View>
                     <TouchableOpacity style={{height:50, backgroundColor:'#24a0ed'}}>
-                        <Text style={{fontSize:30,textAlign:'center', color: 'white'}}>Sign Up</Text>
+                        <Text style={{fontSize:30,textAlign:'center', color: 'white'}} onPress={() => navigation.navigate('Signup')}>Sign Up</Text>
                     </TouchableOpacity>
                         {/* <Button title="Sign Up"></Button> */}
                     </View>
                 </View>
+            </View>
+            <View style={{position:'absolute',bottom:10,right:10,width:55}} >
+                <Text style={{fontSize:14}} onPress={() => navigation.navigate('Send')}>Quick Network</Text>
             </View>
         </View> 
     );

@@ -5,23 +5,20 @@ import LinkzLogo from '../../images/linkzLogo.png';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
-const LinkzHeader = () => {
-
+const LinkzHeader = ({navigation}) => {
     const Menu = ()=>(
-        <View style={{flex:1 ,justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{flex:1 ,justifyContent: 'center', alignItems: 'center' }} onTouchStart={() => navigation.openDrawer()}>
             <Icon name="menu" size={30} color="black" />
         </View>
     );
 
     return (
-        <Header
+        <Header 
         containerStyle={{
             backgroundColor: 'white',
             justifyContent: 'space-around',
           }}        
         leftComponent={<Image style={{width:100, height:40}} source={LinkzLogo} />}
-        // centerComponent={{ text: 'MY TITLE', style: { color: '#white' } }}
-        // rightComponent={{ icon: 'menu', color: 'black' }}
         rightComponent={<Menu></Menu>}
         />
     );
