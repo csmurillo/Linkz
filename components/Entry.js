@@ -14,13 +14,11 @@ const Entry = ( { navigation } ) => {
                     <TouchableOpacity style={{height:50, backgroundColor:'#24a0ed'}}>
                         <Text style={{fontSize:30,textAlign:'center', color: 'white'}} onPress={() => navigation.navigate('Login')}>Login</Text>
                     </TouchableOpacity>
-                        {/* <Button title="Login"></Button> */}
                     </View>
                     <View>
                     <TouchableOpacity style={{height:50, backgroundColor:'#24a0ed'}}>
                         <Text style={{fontSize:30,textAlign:'center', color: 'white'}} onPress={() => navigation.navigate('Signup')}>Sign Up</Text>
                     </TouchableOpacity>
-                        {/* <Button title="Sign Up"></Button> */}
                     </View>
                 </View>
             </View>
